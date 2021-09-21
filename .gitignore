@@ -3,3 +3,4 @@
 00-title
 node_modules/
 package-lock.json
+.vscode/
