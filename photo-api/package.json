@@ -1,0 +1,17 @@
+{
+  "name": "photo-api",
+  "version": "1.0.0",
+  "description": "자동사진정리",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "author": "john",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
