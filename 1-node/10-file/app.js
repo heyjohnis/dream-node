@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 try {
-  fs.renameSync('./file.txt', './file2.txt');
+  fs.renameSync('./file4.txt', './file2.txt');
 } catch(e) {
   console.error(e);
 }
@@ -12,5 +12,5 @@ fs.rename('./file2.txt', './file3.txt', (error) => {
 });
 console.log('hello2');
 
-fs.promises.rename('./file3.txt', './file4.txt').then().catch(console.error);
+fs.promises.rename('./file3.txt', './file2.txt').then().catch(console.error);
 console.log('hello3');

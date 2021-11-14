@@ -26,3 +26,5 @@ console.log(os.homedir());
 console.log('==== userInfo ====')
 console.log(os.userInfo());
 // console.log( userInfo(options?: { encoding: BufferEncoding }): UserInfo<string>;
+
+console.log(os.cpus().length);

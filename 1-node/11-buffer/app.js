@@ -10,7 +10,7 @@ const buf3 = Buffer.allocUnsafe(2);
 buf2[0] = 72;
 buf2[1] = 105;
 console.log(buf2);
-buf2.copy(buf3)
+buf2.copy(buf3);
 console.log(buf2.toString());
 console.log(buf3);
 
