@@ -1,16 +1,16 @@
 import express from 'express';
 const app = express();
 
-// app.get('/sky/:id', (req, res, next) => {
-//   console.log('get');
-//   console.log(req.path);
-//   console.log(req.headers);
-//   console.log(req.params);
-//   console.log(req.query);
-//   res.setHeader('key', 'value');
-//   //res.send('hi');
-//   res.status(201).send('created');
-// });
+app.get('/sky/:id', (req, res, next) => {
+  console.log('get');
+  console.log("req.path: ",req.path);
+  console.log("req.headers: ",req.headers);
+  console.log("req.params: ", req.params);
+  console.log("req.query: ", req.query);
+  res.setHeader('key', 'value');
+  //res.send('hi');
+  res.status(201).send('created');
+});
 
 app.all('/api', (req, res, next) => {
   console.log('all');
@@ -36,7 +36,7 @@ app.get(
   }
 );
 
-app.use(express.json())
+app.use(express.json()) // Post 에서 JSON을 받을 수 있도록 함
 
 app.post('/post', (req, res, next) => {
   console.log(req.body);
@@ -50,7 +50,5 @@ app.use((error, req, res, next) => {
   console.error(error);
   res.status(500).send('Sorry, try later!');
 });
-
-
 
 app.listen(8080);

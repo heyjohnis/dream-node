@@ -29,7 +29,7 @@ app.get('/file2', (req, res, next) => {
 
 app.get('/file3', async (req, res) => {
   // const data = await fsAsync.readFile('/file4.txt');
-  try{
+  try{  // 동기방식이나 async 로 인해 비동기 에러처리방식으로 해야함(외부에서 에러를 감지할 방법이 없음)
     const data = await fsAsync.readFile('/file4.txt');
   } catch (error) {
     res.status(404).send('"file3" not found');
