@@ -1,15 +1,16 @@
 import express from 'express';
 import 'express-async-errors';
 import { body } from 'express-validator';
-// import { validate } from '../middleware/validator.js';
+import { validate } from '../middleware/validator.js';
 import * as authController from '../controller/auth.js';
+import { isAuth } from '../middleware/auth.js';
 
 const router = express.Router();
 
 const validateCredential = [
   body('username').trim().notEmpty().withMessage('아이디를 최소 5자 이상 입력하세요.'),
   body('password').trim().isLength({min: 5}).withMessage('패스워드를 최소 5자 이상 입력하세요.'),
- // validate,
+  validate,
 ]
 
 const validateSignup = [
@@ -22,5 +23,6 @@ const validateSignup = [
 router.post('/signup', validateSignup, authController.signup);
 
 router.post('/login', validateCredential, authController.login);
+
 
 export default router;
