@@ -1,22 +1,24 @@
 import express from 'express';
 import 'express-async-errors';
 import * as tweetController from '../controller/tweet.js';
+import { isAuth } from '../middleware/auth.js';
+
 const router = express.Router();
 
 // GET /tweets
 // GET /tweets?username=:username
-router.get('/', tweetController.getTweets);
+router.get('/', isAuth, tweetController.getTweets);
 
 // GET /tweets/:id
-router.get('/:id', tweetController.getTweet);
+router.get('/:id', isAuth, tweetController.getTweet);
 
 // POST /tweeets
-router.post('/', tweetController.createTweet);
+router.post('/', isAuth, tweetController.createTweet);
 
 // PUT /tweets/:id
-router.put('/:id', tweetController.updateTweet);
+router.put('/:id', isAuth, tweetController.updateTweet);
 
 // DELETE /tweets/:id
-router.delete('/:id', tweetController.deleteTweet);
+router.delete('/:id', isAuth, tweetController.deleteTweet);
 
 export default router;
