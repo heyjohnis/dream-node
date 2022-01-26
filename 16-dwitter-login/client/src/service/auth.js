@@ -37,6 +37,7 @@ export default class AuthService {
         url,
       }),
     });
+    console.log("Signup: ", data.token);
     this.tokenStorage.saveToken(data.token);
     return data;
   }

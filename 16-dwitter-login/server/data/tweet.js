@@ -4,13 +4,13 @@ let tweets = [
   {
     id: '1',
     text: '드림코더분들 화이팅!',
-    createdAt: Date.now().toString(),
+    createdAt: new Date().toString(),
     userId: '1'
   },
   {
     id: '2',
     text: '안뇽!',
-    createdAt: Date.now().toString(),
+    createdAt: new Date().toString(),
     userId: '1'
   },
 ];
