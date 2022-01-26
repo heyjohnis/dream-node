@@ -18,7 +18,6 @@ export const isAuth = async (req, res, next) => {
     token,
     'ix6LaSc0g5nUqJ2HFruU',
     async (error, decoded) => {
-      console.log("decode: ", decoded);
       if (error) {
         return res.status(401).json(AUTH_ERROR);
       }
