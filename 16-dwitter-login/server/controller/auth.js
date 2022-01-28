@@ -10,8 +10,10 @@ export async function signup( req, res ) {
   if (found) {
     return res.status(409).json({ message: `'${username}' 아이디는 이미 존재합니다.`});
   }
-
-  const hashed = await bcrypt.hash(password, config.bcrypt.saltRounds);
+  const round = config.bcrypt.saltRounds;
+  console.log(typeof(round));
+  const hashed = await bcrypt.hash(password, parseInt(config.bcrypt.saltRounds));
+  console.log("hashed: ", hashed);
   const userId = await userRepository.createUser({
     username,
     password: hashed,
