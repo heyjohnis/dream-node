@@ -9,5 +9,8 @@ export const config = {
   },
   bcrypt: {
     saltRounds: process.env.BCRYPT_SALT_ROUNDS,
+  },
+  host: {
+    port: 8080,
   }
 }
